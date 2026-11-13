@@ -128,20 +128,20 @@ We first record the following fact needed for completeness.
     B_\delta=P_+M_{e^{-\ii\delta}}+P_-M_{e^{\ii\delta}}.
   \end{equation}
   Then the products $B_\delta T_\delta$ and $T_\delta B_\delta$ are the identity
-  modulo
-  compact operators. Indeed, the errors are cross-frequency terms and
-  commutators
-  of Fourier projections with continuous multiplication operators. 
-  
-  For a
-  trigonometric-polynomial such as $g_N(s)=\sum_{m=-N}^Nc_m\exp(im\pi s/K)$
-  the constituent operators in the error terms are finite rank. Since every continuous function $g$ with period $2K$ can be uniformly approximated by some $g_N$ the finite-rank property extends to compactness. The zero Fourier mode in the integer lattice
-  contributes at most a finite-rank correction. Thus, from Atkinson's stability theorem the restriction to the odd
-  subspace is Fredholm. 
-  
+  modulo compact operators. Indeed, the errors are cross-frequency terms and
+  commutators of Fourier projections with continuous multiplication operators.
+
+  For a trigonometric-polynomial such as $g_N(s)=\sum_{m=-N}^Nc_m\exp(im\pi
+  s/K)$ the constituent operators in the error terms are finite rank. Since
+  every continuous function $g$ with period $2K$ can be uniformly approximated
+  by some $g_N$ the finite-rank property extends to compactness. The zero
+  Fourier mode in the integer lattice contributes at most a finite-rank
+  correction. Thus, from Atkinson's stability theorem the restriction to the odd
+  subspace is Fredholm.
+
   Finally, replacing $\delta$ by $t\delta$, $0\leq t\leq1$, gives a
-  norm-continuous Fredholm path from the ordinary sine synthesis operator, which is unitary.
-  The index is therefore zero.
+  norm-continuous Fredholm path from the ordinary sine synthesis operator, which
+  is unitary. The index is therefore zero.
 \end{proof}
 
 For the normalised $\hat{\Phi}$ modes, expansion of the hyperbolic functions
@@ -158,14 +158,17 @@ Here $a_r^+=\sqrt2+O(e^{-4\xi_r})$ and $a_r^-=O(e^{-2\xi_r})$. Since
   \delta_\Phi(s)=\theta(s)-\frac{\pi s}{2K},
 \end{equation}
 and $\delta_\Phi$ vanishes at both endpoints, lemma~\ref{lem:phase} applies with
-$\mu=1$. The difference between synthesis by the $\hat{\Phi}_r$ and by the phase-shifted sines is square-summable, 
+$\mu=1$. The difference between synthesis by the $\hat{\Phi}_r$ and by the
+phase-shifted sines is square-summable,
 \begin{equation}
-    h_r(s)=\hat{\Phi}_r(s)-\sqrt{2}\sin\left(\frac{(r+1)\pi s}{K}+\delta_\Phi (s)\right)
-    , \quad \sum_{r=0}^\infty ||h_r||_\mathscr{H}^2 < \infty.
+  h_r(s)=\hat{\Phi}_r(s)
+  -\sqrt{2}\sin\left(\frac{(r+1)\pi s}{K}+\delta_\Phi (s)\right),
+  \quad \sum_{r=0}^\infty ||h_r||_\mathscr{H}^2 < \infty.
 \end{equation}
-Therefore the difference is a Hilbert-Schmidt operator, and hence compact. By the Fredholm stability theorem synthesis by $\hat{\Phi}_r$ is therefore
-Fredholm and of index zero. By \eqref{eq:mode-orthogonality} it is also an
-isometry. Its kernel and cokernel must both vanish, so it is surjective.
+Therefore the difference is a Hilbert-Schmidt operator, and hence compact. By
+the Fredholm stability theorem synthesis by $\hat{\Phi}_r$ is therefore Fredholm
+and of index zero. By \eqref{eq:mode-orthogonality} it is also an isometry. Its
+kernel and cokernel must both vanish, so it is surjective.
 
 For $\hat{\Psi}_r(s)$ the same expansion has leading term
 $\sqrt2\sin(\omega_rs-\varphi(s))$. The phase $-\varphi$ vanishes at both
@@ -199,7 +202,8 @@ For $d=r-\ell$, $p=r+\ell+1$, the remaining terms are
   \begin{aligned}
     &\frac{\sqrt{\pi}}{c_0\sqrt{kK}}
     \left(\frac{\langle\hat{\Phi}_r|m_C s_\ell\rangle}{\sqrt{\gamma_r}}
-    -\frac{\langle m_B s_r|\hat{\Psi}_\ell\rangle}{\sqrt{\gamma_\ell}}\right)=a_r(\widehat c_d-\widehat c_p)
+    -\frac{\langle m_B s_r|\hat{\Psi}_\ell\rangle}{\sqrt{\gamma_\ell}}\right)
+    =a_r(\widehat c_d-\widehat c_p)
     +b_r(\widehat s_p-\widehat s_d)
     +b_\ell(\widehat t_p+\widehat t_d).
   \end{aligned}
