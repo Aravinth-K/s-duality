@@ -1,0 +1,40 @@
+\section{The Schur index}
+\label{sec:schur}
+We follow the convention of \cite{Bourdier:2015wda} and take $q=e^{\ii\pi\tau}$.
+This is convenient when working with standard Jacobi theta functions.
+Consequently, we define $Q:=q^2$ and use $Q$-Pochhammer symbols,
+$(z;Q)_\infty=\prod_{j=0}^{\infty}(1-zQ^j)$. We further adopt the following
+parameterisation for the flavour fugacity $u$: $t=qu=e^{2\ii c}$. For
+convergence of the integrand, we work in the domain $0<|q|<1$ and
+$|q|<|u|<|q|^{-1}$.
+
+The integral representation of the flavoured Schur index of $\mathcal N=4$ SYM
+with gauge group $SO(2n+1)$ or $Sp(2n)$, labelled by $B$ and $C$,
+respectively, is~\cite{SpiridonovVartanov2012,Du:2023pbn}
+\begin{align}
+  \mathcal I_B(q,u;n)
+  &=\frac{C_0(Q,t)^n t^{-n^2}}{2^n n!}
+  \int_{[0,\pi]^n}\prod_{i=1}^n\frac{\dd a_i}{\pi}\,
+  \prod_{i=1}^n R(a_i)\prod_{i<j}R(a_i-a_j)R(a_i+a_j),
+  \label{eq:root-integrals}\\
+  \mathcal I_C(q,u;n)
+  &=\frac{C_0(Q,t)^n t^{-n^2}}{2^n n!}
+  \int_{[0,\pi]^n}\prod_{i=1}^n\frac{\dd a_i}{\pi}\,
+  \prod_{i=1}^n R(2a_i)\prod_{i<j}R(a_i-a_j)R(a_i+a_j),
+  \label{eq:root-C}
+\end{align}
+where
+\begin{equation}
+  R(a)=\frac{\vartheta_1(a\mid\tau)^2}
+  {\vartheta_1(a-c\mid\tau)\vartheta_1(a+c\mid\tau)}, \qquad
+  C_0(Q,t)
+  =\frac{(Q;Q)_\infty^2}{(t;Q)_\infty(Q/t;Q)_\infty}.
+  \label{eq:C0}
+\end{equation}
+We therefore see that the entire difference between these two cases is in the
+one-body factors $R(a)$ and $R(2a)$. Our goal is to establish the following
+identity for every positive rank:
+\begin{equation}
+  \mathcal I_B(q,u;n)=\mathcal I_C(q,u;n).
+  \label{eq:duality}
+\end{equation}

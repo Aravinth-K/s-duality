@@ -1,0 +1,136 @@
+\section{Introduction}
+\label{sec:introduction}
+The superconformal index of a four-dimensional superconformal field theory was
+introduced in \cite{Romelsberger2006,Kinney2007}. It is a generalisation of the
+Witten index to superconformal field theories. Given mutually commuting charges
+$G_i$ that commute with a chosen Poincaré supercharge $Q$ and its radial
+quantisation adjoint $Q^\dagger$, the index is given by a trace over the Hilbert
+space of the theory
+
+\begin{equation}
+  \mathcal I(\{\kappa_i\})
+  =\operatorname{Tr}_{\mathcal H}
+  \left[
+    (-1)^F e^{-\beta\{Q,Q^\dagger\}}
+    \prod_i \kappa_i^{G_i}
+    \right],
+  \label{eq:sc-index}
+\end{equation}
+
+where $F$ is the fermion number, $\beta$ an arbitrary constant, and the
+$\kappa_i$ are fugacities for the remaining charges. The canonical reviews are
+\cite{Rastelli:2016tbz,Gadde:2011uv,Gadde:2020yah}. Of particular importance is
+the fact that the index tracks protected states, allowing exact results to be
+obtained that are insensitive to coupling strength.
+
+Here we consider 4d $\mathcal N=4$ super Yang-Mills theory. In the $SU(n)$ case
+this theory appears on the conformal-field-theory side of the canonical duality
+between type-IIB string theory on $AdS_5\times S^5$ and $\mathcal N=4$
+SYM~\cite{Maldacena:1998}. In this case the superconformal index allows one to
+count black hole microstates in the holographic dual.
+More generally the index is useful as a quantitative test of field theory
+dualities.
+
+We are centrally interested in S-duality. This relates a theory with gauge
+algebra $\mathfrak g$ to one with Langlands-dual algebra $\mathfrak g^{\vee}$.
+For the $B_n$ and $C_n$ families,
+
+\begin{equation}
+  B_n^\vee=C_n,
+  \qquad
+  C_n^\vee=B_n,
+\end{equation}
+
+so the theories with gauge algebras $\mathfrak{so}(2n+1)$ and
+$\mathfrak{sp}(2n)$ are exchanged. S-duality therefore predicts equality of
+their superconformal indices. That equality is physically natural but is not
+manifest in the corresponding matrix integrals.
+
+Spiridonov and Vartanov expressed the superconformal indices of $\mathcal N=4$
+SYM with simple gauge groups as elliptic hypergeometric
+integrals~\cite{SpiridonovVartanov2012,Spiridonov:2020intro}. They clearly
+articulated the S-duality property for these gauge groups as a conjectured
+equality between two integrals. Moreover, they proved this identity in several special
+cases but did not establish the generic finite-rank identity.
+
+We will study a coarser version of the index called the Schur index. This is
+constructed as a particular limit of the superconformal index which reduces the
+number of fugacities. While containing less information, it becomes far more
+tractable. For 4d theories with $\mathcal N=2$ superconformal symmetry, the
+Schur index has several remarkable properties. For theories of class $\mathcal
+S$, it can be computed using a $q$-deformed 2d Yang--Mills
+theory~\cite{Gadde:2011ik}. The same quantity can also be identified with the
+vacuum character of a corresponding chiral algebra
+\cite{Beem:2013sza,Beem:2017ooy}. Of particular note, Bourdier, Drukker, and
+Felix were able to derive a convergent closed expression for the index with
+gauge group $U(N)$ \cite{Bourdier:2015wda}. A natural question is whether one
+can derive a similar expression for the other classical groups, from which
+S-duality should drop out.
+
+There have been several attempts to make progress on this problem.
+
+\begin{itemize}
+  \item Pan and Peelaers developed a residue method for multivariate elliptic
+        integrals and used it to obtain closed-form expressions for flavoured
+        indices of several low-rank theories. In particular, they evaluated the
+        $SO(5)$ theory which should be dual to the $Sp(4)$ theory
+        \cite{Pan:2021ulr}.
+
+  \item Hatsuda and Okazaki adapted the Fermi-gas approach of Bourdier,
+        Drukker, and Felix. They obtained closed-form expressions for the Schur
+        indices of 4d $\mathcal N=2^*$ SYM with unitary gauge groups at
+        arbitrary rank \cite{Hatsuda:2022xdv}. Equivalently, from the $\mathcal
+        N=4$ perspective, this restores the flavour fugacity for the adjoint
+        hypermultiplet and gives the flavoured unitary-group analogue
+        of~\cite{Bourdier:2015wda}.
+
+  \item Guo, Li, Pan, and Wang extended the elliptic-integration method and
+        derived a closed analytic expression for the fully flavoured Schur
+        index of the $\mathcal N=4$ $SO(7)$ theory, the first group with
+        non-trivial duality~\cite{Guo:2023qly}. They did not carry out the
+        corresponding $Sp(6)$ calculation.
+
+  \item Du, Huang, and Wang studied the unflavoured indices of the $B_n$,
+        $C_n$, $D_n$, and $G_2$ theories using both character expansion and an
+        extension of the Fermi-gas method \cite{Du:2023pbn}. For the cases they
+        computed, they verified the equality of the $B_n$ and $C_n$ indices to
+        high orders in the $q$-expansion. They also showed that the two
+        families have the same stabilised large-$n$ index. However, they did
+        not prove the $B_n/C_n$ equality at arbitrary rank.
+
+  \item Ren and Huang recently studied a more general, three-parameter
+        deformation of the Schur indices for the $B_n$, $C_n$, and $D_n$
+        theories using Koornwinder and Macdonald polynomials
+        \cite{RenHuang2026BCD}. For their coarser degeneration the index reduces
+        to a known multivariable Askey--Wilson integral and the $B_n/C_n$
+        S-duality becomes manifest.
+
+\end{itemize}
+
+In this paper, we will not seek closed-form expressions for these indices.
+Instead we will demonstrate exact equality for the $B_n$ and $C_n$ indices at the level of the integral representation. This paper is organised as
+follows: Section~\ref{sec:schur} establishes the conventions and the two matrix
+integrals. Section~\ref{sec:unflavoured} proves the unflavoured equality by
+first expressing the indices in terms of a Fermi-gas partition function
+representation, after which the two kernels are shown to be isospectral.
+Section~\ref{sec:rains} restores the flavour fugacity and derives the equality
+from a known elliptic hypergeometric integral transformation identity. We
+conclude in Section~\ref{sec:conclusion}.
+
+In Appendix~\ref{app:elliptic} we specify the theta- and
+elliptic-gamma-function conventions. Appendices~\ref{app:mode-motivation} and
+\ref{app:darboux} provide motivation and technical details for various aspects
+of the unflavoured index calculation. Appendix~\ref{app:rains-limit} justifies
+the boundary limit of the theorem used in the flavoured proof.
+
+\textbf{Statement of AI use.} The construction reported on in this paper is
+based on one originally generated by GPT-5.6 Sol and GPT-6 Astra at the author's
+prompting. The author had periodically attempted to use the publicly available
+models to solve the unflavoured version of this problem, typically to no avail.
+Many of the ideas used in the final argument did emerge in responses from
+earlier models but GPT-5.6
+Sol was the first to put the pieces together and solve the problem fully. GPT-6
+Astra subsequently found the
+solution for the flavoured case. The author refined the construction which is
+presented in this paper. The manuscript was written by the author and we hope
+represents a clear distillation of the arguments.

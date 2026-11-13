@@ -1,0 +1,126 @@
+\section{Elliptic function conventions}
+\label{app:elliptic}
+\subsection{Theta and elliptic gamma functions}
+\label{app:theta-gamma}
+We use theta functions with quasi-periods $\pi,\pi\tau$, nome
+$q=e^{\ii\pi\tau}$, and $Q=q^2$. Their
+product definitions are
+\begin{equation}
+  \begin{aligned}
+    \vartheta_1(a\mid\tau)
+    &=2q^{1/4}\sin a\prod_{m=1}^{\infty}
+    (1-q^{2m})(1-2q^{2m}\cos2a+q^{4m}),\\
+    \vartheta_2(a\mid\tau)
+    &=2q^{1/4}\cos a\prod_{m=1}^{\infty}
+    (1-q^{2m})(1+2q^{2m}\cos2a+q^{4m}),\\
+    \vartheta_3(a\mid\tau)
+    &=\prod_{m=1}^{\infty}
+    (1-q^{2m})(1+2q^{2m-1}\cos2a+q^{4m-2}),\\
+    \vartheta_4(a\mid\tau)
+    &=\prod_{m=1}^{\infty}
+    (1-q^{2m})(1-2q^{2m-1}\cos2a+q^{4m-2}),\\
+    \eta(\tau)&=q^{1/12}\prod_{m=1}^{\infty}(1-q^{2m}).
+  \end{aligned}
+  \label{eq:theta-products}
+\end{equation}
+The normalisation aligns with \cite{WhittakerWatson,Lawden,DLMF}. The odd theta
+function obeys
+\begin{equation}
+  \vartheta_1(a+\pi)=-\vartheta_1(a),\qquad
+  \vartheta_1(a+\pi\tau)=-q^{-1}e^{-2\ii a}\vartheta_1(a).
+  \label{eq:theta-periods}
+\end{equation}
+Under half-period shifts we have
+\begin{equation}
+  \begin{gathered}
+    \vartheta_1(a+\pi/2)=\vartheta_2(a),\qquad
+    \vartheta_4(a+\pi/2)=\vartheta_3(a),\\
+    \vartheta_1(a\pm\pi\tau/2)
+    =\pm\ii q^{-1/4}e^{\mp\ii a}\vartheta_4(a),\qquad 
+    \vartheta_4(a\pm\pi\tau/2)
+    =\pm\ii q^{-1/4}e^{\mp\ii a}\vartheta_1(a).
+  \end{gathered}
+  \label{eq:half-periods}
+\end{equation}
+Finally we have the duplication identity
+\begin{equation}
+  \vartheta_1'(0)\vartheta_1(2a)
+  =2\vartheta_1(a)\vartheta_2(a)\vartheta_3(a)\vartheta_4(a),
+  \qquad
+  \vartheta_1'(0)=\vartheta_2(0)\vartheta_3(0)\vartheta_4(0).
+  \label{eq:theta-duplication}
+\end{equation}
+
+We also introduce the elliptic $Q$-theta functions
+\begin{equation}
+  \Theta_Q(z)=(z;Q)_\infty(Q/z;Q)_\infty,\qquad
+  A_Q=(Q;Q)_\infty.
+  \label{eq:multiplicative-theta}
+\end{equation}
+With $z=e^{2\ii a}$ these are related to the previous set of theta functions as
+follows
+\begin{equation}
+  \begin{gathered}
+    \vartheta_1(a)=\ii q^{1/4}A_Qe^{-\ii a}\Theta_Q(z),
+    \qquad \vartheta_4(a)=A_Q\Theta_Q(qz).
+  \end{gathered}
+  \label{eq:jacobi-dictionary}
+\end{equation}
+
+For two nomes with $0<|p|,|Q|<1$, the elliptic gamma function is
+\begin{equation}
+  \Gamma_{p,Q}(z)
+  =\prod_{j,k\geq0}
+  \frac{1-p^{j+1}Q^{k+1}/z}{1-p^jQ^kz},\qquad z\in\mathbb C^*.
+  \label{eq:elliptic-gamma}
+\end{equation}
+It is meromorphic, with possible poles at $p^{-j}Q^{-k}$ and
+zeros at $p^{j+1}Q^{k+1}$, $j,k\geq0$.
+We use the standard notation where a $\pm$ superscript refers to products of the positive
+and negative power. For example
+$\Gamma_{p,Q}(v^{\pm1}z^{\pm1})
+  =\Gamma_{p,Q}(vz)\Gamma_{p,Q}(v/z)
+  \Gamma_{p,Q}(z/v)\Gamma_{p,Q}(1/(vz))$.
+Useful identities are
+\begin{equation}
+  \begin{gathered}
+    \Gamma_{p,Q}(z)\Gamma_{p,Q}(pQ/z)=1,\qquad
+    \Gamma_{p,Q}(pz)=\Theta_Q(z)\Gamma_{p,Q}(z),\qquad
+    \Gamma_{p,Q}(Qz)=\Theta_p(z)\Gamma_{p,Q}(z).
+  \end{gathered}
+  \label{eq:gamma-identities}
+\end{equation}
+
+\subsection{Jacobi elliptic functions and Fourier series}
+The theta/Jacobi correspondence is
+\begin{equation}
+  \sn s=\frac{\vartheta_3(0)}{\vartheta_2(0)}
+  \frac{\vartheta_1(a)}{\vartheta_4(a)},\quad
+  \cn s=\frac{\vartheta_4(0)}{\vartheta_2(0)}
+  \frac{\vartheta_2(a)}{\vartheta_4(a)},\quad
+  \dn s=\frac{\vartheta_4(0)}{\vartheta_3(0)}
+  \frac{\vartheta_3(a)}{\vartheta_4(a)},\qquad s=\frac{2K}{\pi}a.
+\end{equation}
+$K(k)$ is the complete elliptic integral of the first kind and $K'(k)=K(
+\sqrt{1-k^2})$ is the complementary integral. Beyond the standard relations $\sn^2s+\cn^2s=1$ and $k^2\sn^2s+\dn^2s=1$, we need
+\begin{equation}
+  \begin{aligned}
+    \sn(2s)&=\frac{2\sn s\cn s\dn s}{1-k^2\sn^4s},\\
+    \sn(s+t)\sn(s-t)&=
+    \frac{\sn^2s-\sn^2t}{1-k^2\sn^2s\sn^2t},\\
+    \cn(s-t)-\cn(s+t)&=
+    \frac{2\sn s\sn t\dn s\dn t}{1-k^2\sn^2s\sn^2t}.
+  \end{aligned}
+\end{equation}
+For $L=\pi K'/K$, the relevant Fourier series are
+\begin{align}
+  \sn s&=\frac\pi{kK}\sum_{r\geq0}
+  \csch\!\left(\frac{(2r+1)L}{2}\right)
+  \sin\!\left(\frac{(2r+1)\pi s}{2K}\right),\label{eq:sn-fourier}\\
+  \cn s&=\frac\pi{kK}\sum_{r\geq0}
+  \sech\!\left(\frac{(2r+1)L}{2}\right)
+  \cos\!\left(\frac{(2r+1)\pi s}{2K}\right),\label{eq:cn-fourier}\\
+  \dn s&=\frac\pi{2K}+\frac\pi K\sum_{r\geq1}
+  \sech(rL)\cos\!\left(\frac{r\pi s}{K}\right).
+  \label{eq:dn-fourier}
+\end{align}

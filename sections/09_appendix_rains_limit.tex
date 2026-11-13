@@ -1,0 +1,45 @@
+\section{Validating the boundary limit}
+\label{app:rains-limit}
+This appendix justifies the boundary limit used in section~\ref{sec:rains}. The starting point is \eqref{rains:trace}. The central issue we need to take care of is the development of a singularity in the integrand that collides with the integration contour. This issue is not present on the $H
+\mathbf{b}_B$ side, so we focus on the primary integral here.
+
+For simplicity take $0<Q<t<1$ and $q=\sqrt Q>0$. Deform the boundary vector~\eqref{rains:additive-BC} by
+\begin{equation}
+  \mathbf{b}^{(\lambda)}
+  =\mathbf{b}_B+\frac{\log\lambda}{2\ii}(0,1,0,0).
+\end{equation}
+with $\lambda\rightarrow1$ from below.
+The problematic pole's emergence is due to the coefficient $b_2$, which we have deformed away from. We will show that the integral is still well-behaved as we take the limit.
+
+Using~\eqref{eq:jacobi-dictionary}, the deformed one-body weight is
+$W_{\mathbf{b}^{(\lambda)}}(a)=R(a)F_\lambda(z)$, where
+\begin{equation}
+  F_\lambda(z)=
+  \frac{\Theta_Q(-z)\Theta_Q(-z^{-1})}
+  {\Theta_Q(-\lambda z)\Theta_Q(-\lambda/z)},
+  \qquad z=e^{2\ii a}.
+  \label{rains:boundary-limit}
+\end{equation}
+A single factor in the denominator looks like
+\begin{equation}
+    \Theta_Q(-\lambda z) = (1+\lambda z)\prod_{m=1}^\infty(1+Q^m\lambda z)(1+Q^{m}/(\lambda z)).
+\end{equation}
+This has a simple zero at $z=-1$ when $\lambda=1$ from the prefactor, while the remaining terms in the product remain regular. Factor out this leading term,
+\begin{equation}
+    F_\lambda(z)=\frac{(1+z)(1+z^{-1})}{(1+\lambda z)(1+\lambda z^{-1})}P_\lambda(z),
+\end{equation}
+where $P_\lambda(z)$ contains the remaining infinite product terms. The pole occurs for $z=-1$ so let us focus on the contour $|z|=1$.
+It is then straightforward to see that the prefactor term obeys the following inequality
+\begin{equation}
+  0\leqslant \frac{|1+z|^2}{|1+\lambda z|^2}\leqslant \frac{1}{\lambda}.
+  \label{rains:boundary-bound}
+\end{equation}
+
+For the remaining $P_\lambda (z)$, fix $\lambda_*\in(Q,1)$ sufficiently close to one and again consider $\lambda \rightarrow 1$. Then one can show 
+\begin{equation}
+    P_\lambda(z)\leqslant \prod_{m=1}^\infty 
+\left(\frac{1+Q^m}{1-Q^m/\lambda_*}\right)^4 <\infty.
+\end{equation}
+Therefore over the whole contour we have $|F_\lambda(z)|\leqslant C/\lambda_*$.
+
+Finally, $F_\lambda(z)\to1$ for every $z\ne-1$. We therefore have that $F_\lambda(z)$ is bounded uniformly and therefore, by the dominated convergence theorem, the limit can be taken inside the integral, resulting in the \(B_n\) Schur-index integrand.

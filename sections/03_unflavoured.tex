@@ -1,0 +1,224 @@
+\section{Unflavoured S-duality}
+\label{sec:unflavoured}
+We first consider the setting in which $u=1$. 
+Throughout this section we will further assume $0<q<1$. Our results will extend to $0<|q|<1$ by holomorphy of the original index integrals.
+In this case the integrands of~\eqref{eq:root-integrals}
+and~\eqref{eq:root-C} can be expressed in terms of Jacobi elliptic functions.
+More explicitly, take
+\begin{equation}
+  R(a)=q^{1/2}\sigma(a),\qquad
+  \sigma(a)=\frac{\vartheta_1(a)^2}{\vartheta_4(a)^2}
+  =k\sn^2\!\left(\frac{2K}{\pi}a\right),
+  \label{eq:x}
+\end{equation}
+with elliptic modulus $k=\vartheta_2(0)^2/\vartheta_3(0)^2$ and complete
+elliptic integral $K=\frac{\pi}{2}\vartheta_3(0)^2$. Write
+$\sigma_B(a)=\sigma(a)$ and $\sigma_C(a)=\sigma(2a)$.
+Substituting~\eqref{eq:x} into~\eqref{eq:root-integrals} and~\eqref{eq:root-C}
+and using the addition formula for
+$\sn$ gives
+\begin{equation}
+  \mathcal I_G(q,1;n)=\frac{C_0(Q,q)^n q^{-n^2/2}}{2^n n!}
+  \int_{[0,\pi]^n}\prod_{i=1}^n\frac{\dd a_i}{\pi}\,
+  \prod_{i=1}^n\sigma_G(a_i)
+  \prod_{i<j}\left(\frac{\sigma(a_i)-\sigma(a_j)}
+  {1-\sigma(a_i)\sigma(a_j)}\right)^2.
+  \label{eq:unflavoured-integral}
+\end{equation}
+
+\subsection{The Fermi-gas representation}
+
+The integrand can be reduced to a determinant using a variation on Cauchy's
+double alternant identity~\cite{Krattenthaler:1999}:\footnote{Take
+equation~(2.7) of~\cite{Krattenthaler:1999} and specialize to $X_i=1/x_i$ and
+$Y_j=-x_j$; zero values of $x_i$ follow by continuity.}
+\begin{equation}
+  \det_{i,j}\!\left[\frac{1}{1-x_ix_j}\right]
+  =\frac{\prod_{i<j}(x_i-x_j)^2}
+  {\prod_i(1-x_i^2)\prod_{i<j}(1-x_ix_j)^2}.
+  \label{eq:cauchy}
+\end{equation}
+With $x_i=\sigma(a_i)$, the integrand in~\eqref{eq:unflavoured-integral} is the
+determinant of the symmetric kernel
+\begin{equation}
+  \widehat\rho_G(a,b)
+  =\frac{w_G(a)w_G(b)
+    \sqrt{(1-\sigma(a)^2)(1-\sigma(b)^2)}}
+  {1-\sigma(a)\sigma(b)},
+  \label{eq:full-kernel}
+\end{equation}
+where $w_B(a)=\sqrt{k}\sn(2Ka/\pi)$ and $w_C(a)=\sqrt{k}\sn(4Ka/\pi)$.
+
+The spectral properties of the kernels determine the integrals. At this stage,
+however, these kernels do not operate on the same sectors. Under
+$a\mapsto\pi-a$, $\sigma(a)$ and $w_B(a)$ are even, whereas $w_C(a)$ is odd.
+Thus the kernels have different parity: $\widehat\rho_B$ acts on the even
+sector and $\widehat\rho_C$ on the odd sector, each annihilating the opposite
+sector. This is not necessarily a problem, but it is more convenient to fold
+these sectors onto a common half-interval.
+
+Put $s=2Ka/\pi$, $t=2Kb/\pi$, and $\Delta(s)=1-k^2\sn^4s$. On $0<s,t<K$, define
+\begin{equation}
+  \begin{aligned}
+    \rho_B(s,t)&=\frac{k\sn s\sn t\sqrt{\Delta(s)\Delta(t)}}
+    {1-k^2\sn^2s\sn^2t},\\
+    \rho_C(s,t)&=\frac{k\sn(2s)\sn(2t)\sqrt{\Delta(s)\Delta(t)}}
+    {1-k^2\sn^2s\sn^2t}.
+  \end{aligned}
+  \label{eq:half-kernel}
+\end{equation}
+Reflection of one integration variable changes a row and the corresponding
+column by the same sign, leaving the determinant unchanged. Consequently,
+we can compress the integrals as follows
+\begin{equation}
+  \begin{aligned}
+    I_G(q,1;n)
+    =\left(\frac{C_0(Q,q)}2\right)^n q^{-n^2/2}Z_G(n), \qquad
+    Z_G(n)=\frac1{n!}\int_{(0,K)^n}
+    \prod_{i=1}^n\frac{\dd s_i}{K}\,
+    \det_{i,j}\!\left[\rho_G(s_i,s_j)\right].
+  \end{aligned}
+  \label{eq:coefficient}
+\end{equation}
+This is the Fermi-gas determinant
+representation~\cite{Bourdier:2015wda,Du:2023pbn}, which is fully determined by
+the spectral traces $\operatorname{Tr}(\rho_G^\ell)$. Both kernels act on the
+common Hilbert space $\HH=L^2((0,K),\dd s/K)$, so we can focus on these
+operators.
+
+\subsection{Kernel factorisation}
+
+Our goal is to show that the non-zero eigenvalues of the two operators $\rho_B$
+and $\rho_C$ agree despite their clear differences. Distinct operators with
+identical non-zero spectra are central to supersymmetric quantum
+mechanics~\cite{CooperKhareSukhatme:1995}. This motivates the following
+hypothetical factorisation\footnote{
+See also \cite{Hatsuda:2012hm} for an analogous factorisation relating the ABJM density operator to a Hankel matrix.}:
+\begin{equation}
+  \rho_B=\mathsf A^\dagger\mathsf A,\qquad
+  \rho_C=\mathsf A\mathsf A^\dagger.
+  \label{eq:decomp}
+\end{equation}
+
+These have the same non-zero eigenvalues with multiplicities. The challenge is
+to construct the operator $\mathsf A$.
+
+As a first step, the Jacobi addition formula gives a useful common presentation
+of the kernels $\rho_G(s,t)=\langle s|\rho_G|t\rangle$:
+\begin{equation}
+  \rho_G(s,t)=m_G(s)C(s,t)m_G(t),\qquad
+  C(s,t)=\cn(s-t)-\cn(s+t),
+  \label{eq:common-kernel}
+\end{equation}
+where
+\begin{equation}
+  m_B(s)=\sqrt{\frac{k}{2}}\frac{\sqrt{\Delta(s)}}{\dn s},
+  \qquad m_C(s)=\sqrt{2k}\frac{\cn s}{\sqrt{\Delta(s)}}.
+\end{equation}
+The common function has an explicit spectral decomposition derived from the
+Fourier expansion of $\cn$~\cite[\S22.11]{DLMF}:
+\begin{equation}
+  \begin{gathered}
+    C(s,t)=\sum_{r=0}^{\infty}\gamma_r\hat{e}_r(s)\hat{e}_r(t),\qquad
+    \hat{e}_r(s)=\sqrt{2}\sin(\omega_rs),\qquad
+    \gamma_r=\frac{\pi}{kK}\sech(2\xi_r),
+  \end{gathered}
+  \label{eq:convolution-series}
+\end{equation}
+with
+\begin{equation}
+  \omega_r=\frac{(2r+1)\pi}{2K},\qquad
+  \xi_r=\frac{K'\omega_r}{2}.
+\end{equation}
+The $\hat{e}_r$ form an orthonormal basis of $\HH$.
+
+How do we connect this to~\eqref{eq:decomp}? First focus on the $B_n$ case. We
+can absorb the one-body factors into a new set of ``basis'' $\lvert
+b_r\rangle$, where $\langle s|b_r\rangle=m_B(s)\hat{e}_r(s)$. 
+For the $C_n$ case, similarly introduce $\lvert c_r\rangle$ satisfying
+$\langle s|c_r\rangle=m_C(s)\hat{e}_r(s)$.
+Loosely speaking, it would be
+desirable to work in a basis that roughly diagonalises $A$. 
+We therefore posit that there exists auxiliary
+orthonormal bases $\lvert\hat{\Phi}_r\rangle$ and $\lvert\hat{\Psi}_r\rangle$
+\footnote{One might suggest using $\lvert \hat{e}_r\rangle$ instead, which would satisfy $\rho_B=A_B^\dagger A_B$. This would not, however, satisfy $\rho_C=A_B A_B^\dagger$.} 
+that satisfy
+\begin{equation}
+  \mathsf A_B=\sum_{r\geq0}\sqrt{\gamma_r}\,
+  \lvert\hat{\Phi}_r\rangle\langle b_r\rvert, \quad
+  \mathsf A_C=\sum_{r\geq0}\sqrt{\gamma_r}\,
+  \lvert c_r\rangle\langle\hat{\Psi}_r\rvert.
+\end{equation}
+These ans\"atze give $\mathsf A_B^\dagger\mathsf A_B=\rho_B$ and $\mathsf
+  A_C\mathsf A_C^\dagger=\rho_C$. To obtain~\eqref{eq:decomp} we require
+$\mathsf A_B=\mathsf A_C$. Assuming these bases are complete, it is enough to
+match all matrix elements:
+\begin{equation}
+  \langle\hat{\Phi}_r|\mathsf A_B|\hat{\Psi}_\ell\rangle
+  =\langle\hat{\Phi}_r|\mathsf A_C|\hat{\Psi}_\ell\rangle.
+  \label{eq:matrix-elements}
+\end{equation}
+To make progress we return to the prior position-basis with
+$\hat{\Phi}_r(s)=\langle s|\hat{\Phi}_r\rangle$,
+$\hat{\Psi}_r(s)=\langle s|\hat{\Psi}_r\rangle$, and
+$A_G(s,t)=\langle s|\mathsf A_G|t\rangle$. The two expansions then read
+\begin{equation}
+  \begin{aligned}
+    A_B(s,t)&=m_B(t)\sum_{r\geq0}\sqrt{\gamma_r}\,
+    \hat{\Phi}_r(s)\hat{e}_r(t),\\
+    A_C(s,t)&=m_C(s)\sum_{r\geq0}\sqrt{\gamma_r}\,
+    \hat{e}_r(s)\hat{\Psi}_r(t).
+  \end{aligned}
+  \label{eq:darboux-series}
+\end{equation}
+Establishing appropriate functional forms for $\hat{\Phi}_r$ and
+$\hat{\Psi}_r$ is a nontrivial exercise.
+In appendix~\ref{app:mode-motivation} we motivate the following construction. Here we simply state the expressions:
+\begin{equation}
+  \begin{aligned}
+    \hat{\Phi}_r(s)&=\frac{2\bigl[\cosh\xi_r\cos\theta(s)\sin(\omega_rs)
+        +\sinh\xi_r\sin\theta(s)\cos(\omega_rs)\bigr]}
+    {\sqrt{\cosh(2\xi_r)}},\\
+    \hat{\Psi}_r(s)&=\frac{2\bigl[\cosh\xi_r\cos\varphi(s)\sin(\omega_rs)
+        -\sinh\xi_r\sin\varphi(s)\cos(\omega_rs)\bigr]}
+    {\sqrt{\cosh(2\xi_r)}},
+  \end{aligned}
+  \label{eq:outgoing}
+\end{equation}
+where
+\begin{equation}
+  \begin{aligned}
+    \cos\theta(s)&=\frac{\cn s}{\sqrt{\Delta(s)}},&
+    \sin\theta(s)&=\frac{\sn s\dn s}{\sqrt{\Delta(s)}},\\
+    \cos\varphi(s)&=\frac{\dn s}{\sqrt{\Delta(s)}},&
+    \sin\varphi(s)&=\frac{k\sn s\cn s}{\sqrt{\Delta(s)}}.
+  \end{aligned}
+  \label{eq:half-angles}
+\end{equation}
+
+We then have the following.
+
+\begin{proposition}\label{prop:modes}
+  The systems $(\hat{\Phi}_r)_{r\geq0}$ and $(\hat{\Psi}_r)_{r\geq0}$ are
+  complete orthonormal bases of $\HH$. The series~\eqref{eq:darboux-series}
+  converge uniformly on $[0,K]^2$ and satisfy, for every $r,\ell$,
+  \begin{equation}
+    \begin{aligned}
+      &\int_0^K\!\int_0^K
+      \hat{\Phi}^*_r(s)A_B(s,t)\hat{\Psi}_\ell(t)
+      \frac{\dd s\,\dd t}{K^2}=\int_0^K\!\int_0^K
+      \hat{\Phi}^*_r(s)A_C(s,t)\hat{\Psi}_\ell(t)
+      \frac{\dd s\,\dd t}{K^2}.
+    \end{aligned}
+    \label{eq:bounded-coefficients}
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  See appendix~\ref{app:darboux}.
+\end{proof}
+
+Equation~\eqref{eq:bounded-coefficients} is equivalent to
+\eqref{eq:matrix-elements}. Thus we have found a sufficient set of basis
+functions and consequently constructed the desired operator $\mathsf A:=\mathsf
+A_B=\mathsf A_C$. Equation~\eqref{eq:decomp} holds and thus the two indices are
+identical.

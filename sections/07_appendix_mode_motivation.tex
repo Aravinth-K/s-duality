@@ -1,0 +1,117 @@
+\section{Motivating the auxiliary bases}
+\label{app:mode-motivation}
+Here we explain how the spectral weights of the common function $C(s,t)$ suggest
+the auxiliary modes in~\eqref{eq:outgoing}. We work on the Hilbert
+space $\HH=L^2((0,K),\dd s/K)$, with $0<q<1$.
+We retain $\omega_r,\xi_r$ from section~\ref{sec:unflavoured}
+and put $L=\pi K'/K$, $\dd\nu=\dd s/K$.
+
+\subsection{The hyperbolic ansatz}
+For orthonormal auxiliary bases, equality of the matrix elements of $\mathsf
+A_B$ and $\mathsf A_C$ requires
+\begin{equation}
+  \sqrt{\gamma_\ell}
+  \langle\hat{\Phi}_r|m_C \hat{e}_\ell\rangle
+  =\sqrt{\gamma_r}
+  \langle m_B \hat{e}_r|\hat{\Psi}_\ell\rangle.
+  \label{eq:motivation-weighted-cross}
+\end{equation}
+It is convenient to work temporarily with unnormalised candidates
+$\Phi_r=\sqrt{N_r}\hat{\Phi}_r$ and
+$\Psi_r=\sqrt{N_r}\hat{\Psi}_r$, choosing the target squared norms
+\begin{equation}
+  N_r
+  =\frac14\cosh(2\xi_r)
+  =\frac14\bigl(\cosh^2\xi_r+\sinh^2\xi_r\bigr).
+  \label{eq:motivation-norm}
+\end{equation}
+
+The decomposition in~\eqref{eq:motivation-norm}, together with the half-integer
+Fourier frequencies already present in $\hat{e}_r$, suggests trying
+functions of the form
+\begin{equation}
+  F_r(s)=a(s)\cosh\xi_r\sin(\omega_rs)
+  +b(s)\sinh\xi_r\cos(\omega_rs).
+  \label{eq:motivation-ansatz}
+\end{equation}
+The coefficient functions $a,b$ should be independent of $r$. We want two
+choices, giving $\Phi_r$ and $\Psi_r$, each with inner products
+$\langle F_r|F_\ell\rangle=N_r\delta_{r\ell}$ and jointly satisfying
+\eqref{eq:motivation-weighted-cross}.
+
+\subsection{Constraints on the coefficient functions}
+A useful restriction on the ansatz is
+\begin{equation}
+  a(s)^2+b(s)^2=1,\qquad
+  U(s)=a(s)^2-b(s)^2,\qquad V(s)=2a(s)b(s).
+  \label{eq:motivation-circle}
+\end{equation}
+It gives $U^2+V^2=1$ and allows us to write
+$a,b$ as the cosine and sine of a position-dependent angle. Define
+\begin{equation}
+  U_j=\int_0^K U(s)\cos(j\pi s/K)\dd\nu(s),\qquad
+  V_j=\int_0^K V(s)\sin(j\pi s/K)\dd\nu(s),
+  \qquad j\in\mathbb Z.
+\end{equation}
+For
+$d=r-\ell$ and $p=r+\ell+1$, we have
+\begin{equation}
+  \begin{aligned}
+    \langle F_r|F_\ell\rangle
+    &=N_r\delta_{r\ell}+\frac14\Bigl[
+      U_d\cosh(dL/2)-V_d\sinh(dL/2)\\
+      &\hspace{7em}-U_p\cosh(pL/2)+V_p\sinh(pL/2)\Bigr].
+  \end{aligned}
+  \label{eq:motivation-overlap}
+\end{equation}
+Consequently, the remaining orthogonality condition on $a,b$ is
+\begin{equation}
+  U_d\cosh(dL/2)-V_d\sinh(dL/2)
+  =U_p\cosh(pL/2)-V_p\sinh(pL/2)
+  \label{eq:motivation-constraint}
+\end{equation}
+for every $r,\ell\geq0$.
+
+The hyperbolic factors in this condition suggest using the Jacobi Fourier
+series~\eqref{eq:sn-fourier}--\eqref{eq:dn-fourier}, whose coefficients contain
+the corresponding $\sech$ and $\csch$ factors \cite[\S22.11]{DLMF}. Two such
+choices are
+\begin{equation}
+  (U_\Phi,V_\Phi)=(\cn(2s),\sn(2s)),\qquad
+  (U_\Psi,V_\Psi)=(\dn(2s),-k\sn(2s)).
+  \label{eq:motivation-jacobi}
+\end{equation}
+Both satisfy $U^2+V^2=1$. For the first choice, the cosine and sine
+coefficients vanish at even $j$ and are respectively
+$\frac{\pi}{2kK}\sech(jL/2)$ and
+$\frac{\pi}{2kK}\csch(jL/2)$ at odd $j$. For the second, the cosine
+coefficient is $\frac{\pi}{2K}\sech(jL/2)$ at even $j$ and zero at odd
+$j$, while the sine coefficient is $-\frac{\pi}{2K}\csch(jL/2)$ at odd
+$j$ and zero at even $j$. Hence, including $j=0$,
+\begin{equation}
+  U_j\cosh(jL/2)-V_j\sinh(jL/2)
+  =\begin{cases}
+    0,&(U,V)=(U_\Phi,V_\Phi),\\
+    \pi/(2K),&(U,V)=(U_\Psi,V_\Psi).
+  \end{cases}
+\end{equation}
+This gives exactly the cancellation required
+by~\eqref{eq:motivation-constraint}.
+
+Solving~\eqref{eq:motivation-circle} using the Jacobi duplication formulas
+gives the coefficient functions:
+\begin{equation}
+  \begin{aligned}
+    a_\Phi(s)&=\frac{\cn s}{\sqrt{\Delta(s)}},&
+    b_\Phi(s)&=\frac{\sn s\dn s}{\sqrt{\Delta(s)}},\\
+    a_\Psi(s)&=\frac{\dn s}{\sqrt{\Delta(s)}},&
+    b_\Psi(s)&=-\frac{k\sn s\cn s}{\sqrt{\Delta(s)}},
+  \end{aligned}
+  \qquad \Delta(s)=1-k^2\sn^4s.
+  \label{eq:motivation-coefficients}
+\end{equation}
+These are $(\cos\theta,\sin\theta)$ and
+$(\cos\varphi,-\sin\varphi)$ from~\eqref{eq:half-angles}. Substituting
+them into~\eqref{eq:motivation-ansatz} and dividing by
+$\sqrt{N_r}=\frac12\sqrt{\cosh(2\xi_r)}$ yields the orthonormal modes
+\eqref{eq:outgoing}.

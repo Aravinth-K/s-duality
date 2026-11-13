@@ -1,0 +1,226 @@
+\section{The auxiliary modes and the common kernel}
+\label{app:darboux}
+This appendix proves proposition~\ref{prop:modes}. We again work on the Hilbert
+space $\HH=L^2((0,K),\dd s/K)$, with $0<q<1$.
+We retain $\omega_r,\xi_r$ from section~\ref{sec:unflavoured}
+and put $L=\pi K'/K$, $\dd\nu=\dd s/K$.
+
+\subsection{The Fourier coefficients}
+For $j\in\mathbb Z$, define
+\begin{equation}
+  \begin{aligned}
+    \widehat c_j&=\int_0^K\cn(2s)\cos(j\pi s/K)\dd\nu(s),&
+    \widehat s_j&=\int_0^K\sn(2s)\sin(j\pi s/K)\dd\nu(s),\\
+    \widehat d_j&=\int_0^K\dn(2s)\cos(j\pi s/K)\dd\nu(s),&
+    \widehat e_j&=\int_0^K k\sn(2s)\sin(j\pi s/K)\dd\nu(s),\\
+    \widehat t_j&=\int_0^K\tan\varphi(s)\sin(j\pi s/K)\dd\nu(s).
+  \end{aligned}
+  \label{eq:fourier-coefficients}
+\end{equation}
+Put $\alpha=\pi/(2kK)$ and $\beta=\pi/(2K)$. Then
+\begin{equation}
+  \begin{array}{c|cc}
+    &j\text{ odd}&j\text{ even}\\\hline
+    \widehat c_j&\alpha\sech(jL/2)&0\\
+    \widehat s_j&\alpha\csch(jL/2)&0\\
+    \widehat d_j&0&\beta\sech(jL/2)\\
+    \widehat e_j&\beta\csch(jL/2)&0\\
+    \widehat t_j&2\alpha\csch(jL)&0
+  \end{array}
+  \label{eq:fourier-table}
+\end{equation}
+The even column includes $j=0$, in particular $\widehat d_0=\beta$. Negative
+indices are included with the parity of $\sech$ and $\csch$.
+
+The first four rows follow by substituting $2s$ into
+\eqref{eq:sn-fourier}--\eqref{eq:dn-fourier} and integrating ordinary
+trigonometric modes. To obtain the last row, note that
+\begin{equation}
+  \tan\varphi(s)=\frac{k\sn s\cn s}{\dn s}
+  =-\frac1k\frac{\dd}{\dd s}\log\dn s.
+\end{equation}
+The theta product of $\dn s$, with $v=\pi s/K$, gives
+\begin{equation}
+  \log\dn s=\text{constant}
+  +4\sum_{\substack{j\geq1\\j\text{ odd}}}
+  \frac{q^j}{j(1-q^{2j})}\cos(jv).
+\end{equation}
+The series and its derivative converge uniformly on $[0,K]$. Differentiating
+gives
+\begin{equation}
+  \tan\varphi(s)=\frac{2\pi}{kK}
+  \sum_{\substack{j\geq1\\j\text{ odd}}}\csch(jL)\sin(j\pi s/K),
+\end{equation}
+which proves the fifth row.
+
+\subsection{Orthonormality}
+The duplication formulas applied to \eqref{eq:half-angles} imply
+\begin{equation}
+  \begin{aligned}
+    \cos2\theta&=\cn(2s),&\sin2\theta&=\sn(2s),\\
+    \cos2\varphi&=\dn(2s),&\sin2\varphi&=k\sn(2s).
+  \end{aligned}
+\end{equation}
+Write $a_r=\cosh\xi_r$, $b_r=\sinh\xi_r$. In the overlap
+$\langle\hat{\Phi}_r|\hat{\Phi}_\ell\rangle$, the constant part of
+$\hat{\Phi}^*_r(s)\hat{\Phi}_\ell(s)$ integrates to
+\begin{equation}
+  \frac{a_ra_\ell+b_rb_\ell}
+  {\sqrt{\cosh(2\xi_r)\cosh(2\xi_\ell)}}\delta_{r\ell}
+  =\delta_{r\ell}.
+\end{equation}
+Set
+\begin{equation}
+  d=r-\ell,\qquad p=r+\ell+1,\qquad
+  \delta=\xi_r-\xi_\ell=dL/2,\qquad
+  \sigma=\xi_r+\xi_\ell=pL/2.
+\end{equation}
+The remaining part reduces to
+\begin{equation}
+  E^{\Phi}_{r\ell}=\frac1{\sqrt{\cosh(2\xi_r)\cosh(2\xi_\ell)}}\left[
+    \widehat c_d\cosh\delta-\widehat s_d\sinh\delta
+    -\widehat c_p\cosh\sigma+\widehat s_p\sinh\sigma\right].
+\end{equation}
+Since $d,p$ have opposite parity, either the $d$ terms vanish and the $p$ terms
+cancel, or conversely. Thus $E^{\Phi}_{r\ell}=0$ by \eqref{eq:fourier-table}.
+For $\langle\hat{\Psi}_r|\hat{\Psi}_\ell\rangle$ the corresponding correction is
+\begin{equation}
+  E^{\Psi}_{r\ell}=\frac1{\sqrt{\cosh(2\xi_r)\cosh(2\xi_\ell)}}\left[
+    \widehat d_d\cosh\delta+\widehat e_d\sinh\delta
+    -\widehat d_p\cosh\sigma-\widehat e_p\sinh\sigma\right].
+\end{equation}
+If $d$ is even, the first and last terms are $\beta$ and $-\beta$, with the
+others zero. If $d$ is odd, the second and third cancel instead. This includes
+$r=\ell$, using $\widehat d_0=\beta$. Consequently,
+\begin{equation}
+  \langle\hat{\Phi}_r|\hat{\Phi}_\ell\rangle
+  =\langle\hat{\Psi}_r|\hat{\Psi}_\ell\rangle
+  =\delta_{r\ell}.
+  \label{eq:mode-orthogonality}
+\end{equation}
+
+\subsection{Completeness}
+We first record the following fact needed for completeness.
+\begin{lemma}\label{lem:phase}
+  Let $\mu\in\{1,\tfrac12\}$ and let $\delta\in C([0,K],\mathbb R)$ satisfy
+  $\delta(0)=\delta(K)=0$. The synthesis map
+  \begin{equation}
+    F_\delta a=\sqrt2\sum_{r\geq0}a_r
+    \sin\!\left(\frac{(r+\mu)\pi s}{K}+\delta(s)\right)
+  \end{equation}
+  extends from finite sequences to a bounded Fredholm map $\ell^2(\mathbb
+    N_0)\to\HH$ of index zero.
+\end{lemma}
+\begin{proof}
+  Extend $\delta$ oddly to $(-K,K)$ and periodically across its endpoints. For
+  $\mu=1$ use the integer lattice
+  $\left\{\frac{j\pi}{K}:j\in\mathrm{Z}\right\}$; for $\mu=1/2$ use the
+  half-integer lattice
+  $\left\{\frac{\left(j+\frac{1}{2}\right)\pi}{K}:j\in\mathrm{Z}\right\}$.
+  Let $P_+,P_-$ project onto its positive and negative frequencies,
+  respectively. On the odd subspace, the operator
+  \begin{equation}
+    T_\delta=M_{e^{\ii\delta}}P_++M_{e^{-\ii\delta}}P_-
+  \end{equation}
+  preserves oddness and sends $\sin(\lambda s)$ to $\sin(\lambda s+\delta(s))$.
+  Under restriction to $(0,K)$, it represents $F_\delta$. Consider
+  \begin{equation}
+    B_\delta=P_+M_{e^{-\ii\delta}}+P_-M_{e^{\ii\delta}}.
+  \end{equation}
+  Then the products $B_\delta T_\delta$ and $T_\delta B_\delta$ are the identity
+  modulo
+  compact operators. Indeed, the errors are cross-frequency terms and
+  commutators
+  of Fourier projections with continuous multiplication operators. 
+  
+  For a
+  trigonometric-polynomial such as $g_N(s)=\sum_{m=-N}^Nc_m\exp(im\pi s/K)$
+  the constituent operators in the error terms are finite rank. Since every continuous function $g$ with period $2K$ can be uniformly approximated by some $g_N$ the finite-rank property extends to compactness. The zero Fourier mode in the integer lattice
+  contributes at most a finite-rank correction. Thus, from Atkinson's stability theorem the restriction to the odd
+  subspace is Fredholm. 
+  
+  Finally, replacing $\delta$ by $t\delta$, $0\leq t\leq1$, gives a
+  norm-continuous Fredholm path from the ordinary sine synthesis operator, which is unitary.
+  The index is therefore zero.
+\end{proof}
+
+For the normalised $\hat{\Phi}$ modes, expansion of the hyperbolic functions
+gives
+\begin{equation}
+  \hat{\Phi}_r(s)=a_r^+\sin(\omega_rs+\theta(s))
+  +a_r^-\sin(\omega_rs-\theta(s)),\qquad
+  a_r^\pm=\frac{e^{\pm\xi_r}}{\sqrt{\cosh(2\xi_r)}}.
+\end{equation}
+Here $a_r^+=\sqrt2+O(e^{-4\xi_r})$ and $a_r^-=O(e^{-2\xi_r})$. Since
+\begin{equation}
+  \omega_rs+\theta(s)=\frac{(r+1)\pi s}{K}
+  +\delta_\Phi(s),\qquad
+  \delta_\Phi(s)=\theta(s)-\frac{\pi s}{2K},
+\end{equation}
+and $\delta_\Phi$ vanishes at both endpoints, lemma~\ref{lem:phase} applies with
+$\mu=1$. The difference between synthesis by the $\hat{\Phi}_r$ and by the phase-shifted sines is square-summable, 
+\begin{equation}
+    h_r(s)=\hat{\Phi}_r(s)-\sqrt{2}\sin\left(\frac{(r+1)\pi s}{K}+\delta_\Phi (s)\right)
+    , \quad \sum_{r=0}^\infty ||h_r||_\mathscr{H}^2 < \infty.
+\end{equation}
+Therefore the difference is a Hilbert-Schmidt operator, and hence compact. By the Fredholm stability theorem synthesis by $\hat{\Phi}_r$ is therefore
+Fredholm and of index zero. By \eqref{eq:mode-orthogonality} it is also an
+isometry. Its kernel and cokernel must both vanish, so it is surjective.
+
+For $\hat{\Psi}_r(s)$ the same expansion has leading term
+$\sqrt2\sin(\omega_rs-\varphi(s))$. The phase $-\varphi$ vanishes at both
+endpoints, so lemma~\ref{lem:phase} applies with $\mu=1/2$. The same
+square-summable perturbation argument proves that the
+$\hat{\Psi}_r$ form a complete system.
+Together this proves the basis assertion in proposition~\ref{prop:modes}.
+
+\subsection{The cross identity}
+Let $c_0=\sqrt{k/2}$ and $s_r(s)=\langle s|s_r\rangle=\sin(\omega_rs)$.
+The weighted sine has wavefunction $\langle s|m_G s_r\rangle=m_G(s)s_r(s)$.
+The definitions give four multiplier identities,
+\begin{equation}
+  \begin{aligned}
+    m_C\cos\theta&=c_0(1+\cn(2s)),&
+    m_C\sin\theta&=c_0\sn(2s),\\
+    m_B\cos\varphi&=c_0,&m_B\sin\varphi&=c_0\tan\varphi.
+  \end{aligned}
+\end{equation}
+The matrix-element identity~\eqref{eq:bounded-coefficients} reduces to
+\begin{equation}
+  \sqrt{\gamma_\ell}\langle\hat{\Phi}_r|m_C s_\ell\rangle
+  =\sqrt{\gamma_r}\langle m_B s_r|\hat{\Psi}_\ell\rangle.
+  \label{eq:cross}
+\end{equation}
+After removing the common factor $2\sqrt{kK/\pi}$, the constant part of
+the difference in~\eqref{eq:cross} is
+$c_0(a_r-a_\ell)\langle s_r|s_\ell\rangle=0$.
+For $d=r-\ell$, $p=r+\ell+1$, the remaining terms are
+\begin{equation}
+  \begin{aligned}
+    &\frac{\sqrt{\pi}}{c_0\sqrt{kK}}
+    \left(\frac{\langle\hat{\Phi}_r|m_C s_\ell\rangle}{\sqrt{\gamma_r}}
+    -\frac{\langle m_B s_r|\hat{\Psi}_\ell\rangle}{\sqrt{\gamma_\ell}}\right)=a_r(\widehat c_d-\widehat c_p)
+    +b_r(\widehat s_p-\widehat s_d)
+    +b_\ell(\widehat t_p+\widehat t_d).
+  \end{aligned}
+\end{equation}
+If $d$ is odd, this is
+\begin{equation}
+  \alpha\left[a_r\sech\delta-b_r\csch\delta
+    +2b_\ell\csch(2\delta)\right]=0,
+  \qquad\delta=\xi_r-\xi_\ell,
+\end{equation}
+since $a_r\sinh\delta-b_r\cosh\delta=-\sinh\xi_\ell$.
+If $d$ is even, $p$ is odd and the expression is
+\begin{equation}
+  \alpha\left[-a_r\sech\sigma+b_r\csch\sigma
+    +2b_\ell\csch(2\sigma)\right]=0,
+  \qquad\sigma=\xi_r+\xi_\ell,
+\end{equation}
+since $-a_r\sinh\sigma+b_r\cosh\sigma=-\sinh\xi_\ell$.
+This proves \eqref{eq:cross}, including the diagonal case.
+
+The geometric decay of $\sqrt{\gamma_r}$ and the uniform bounds on the
+normalised modes and multipliers give uniform convergence of the
+series~\eqref{eq:darboux-series} on $[0,K]^2$, completing the proof of
+proposition~\ref{prop:modes}.

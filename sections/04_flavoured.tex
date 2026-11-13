@@ -1,0 +1,103 @@
+\section{Flavoured S-duality}
+\label{sec:rains}\label{sec:flavoured}
+We now restore the flavour fugacity. The Jacobi elliptic-function
+factorisation used in the unflavoured case does not extend directly to
+generic $u$. Instead, we recognise the two Schur integrals as
+specialisations of a family studied by Rains~\cite{Rains:2018kernel}.
+These integrals are taken with respect to the elliptic Selberg measure
+\begin{equation}
+  \begin{aligned}
+    \dd\mu_{p,Q,t}^{(n)}(\mathbf{z})
+    ={}&\frac{\bigl((p;p)_\infty(Q;Q)_\infty\Gamma_{p,Q}(t)\bigr)^n}
+    {2^n n!}
+    \prod_{i<j}
+    \frac{\Gamma_{p,Q}(t z_i^{\pm1}z_j^{\pm1})}
+    {\Gamma_{p,Q}(z_i^{\pm1}z_j^{\pm1})}\\
+    &\hspace{3em}\times\prod_{i=1}^n
+    \frac{1}{\Gamma_{p,Q}(z_i^{\pm2})}\,
+    \frac{\dd z_i}{2\pi\ii z_i}.
+  \end{aligned}
+  \label{rains:measure}
+\end{equation}
+where $\Gamma_{p,Q}$ are the elliptic
+gamma functions and $p$ is an independent elliptic nome (see Appendix~\ref{app:theta-gamma}
+for definitions and identities).
+
+For our purposes the key result is the following.
+
+\begin{theorem}[Rains~\cite{Rains:2018kernel}, Theorem~3.22]
+  \label{thm:rains}
+  For generic nonzero parameters, the integral
+  \begin{equation}
+    \mathcal T_n(v;\kappa)=\int
+    \mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{z};t;p,Q)
+    \prod_{i=1}^n\prod_{r=1}^4
+    \Gamma_{p,Q}\!\left(\sqrt{\frac{pQ}{\kappa}}\,
+    v_r^{\pm1}z_i^{\pm1}\right)
+    \,\dd\mu_{p,Q,t}^{(n)}(\mathbf{z})
+    \label{rains:trace}
+  \end{equation}
+  satisfies
+  \begin{equation}
+    \mathcal T_n(v;\kappa)=\mathcal T_n(v';\kappa),\qquad
+    v'_r=\frac{v_r}{\sqrt{v_1v_2v_3v_4}}.
+    \label{rains:general-reflection}
+  \end{equation}
+\end{theorem}
+
+Here $\mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{x};t;p,Q)$ is an object called the
+analytic interpolation kernel, a meromorphic function of two $n$-tuples
+$\mathbf{z}$ and $\mathbf{x}$~\cite[Theorem~3.1]{Rains:2018kernel}. 
+For a special value of $\kappa$ this kernel can be expressed 
+in terms of elliptic gamma functions\footnote{This can be found by combining Proposition 2.10 of ~\cite{Rains:2018kernel} with the corresponding analytic continuation result in Theorem 3.1.},
+\begin{equation}
+  \mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{x};t;p,Q)
+  =\prod_{i,j=1}^n\Gamma_{p,Q}(\kappa z_i^{\pm1}x_j^{\pm1}),
+  \qquad \kappa=\sqrt{pQ/t}.
+  \label{rains:kernel-product}
+\end{equation}
+Take
+\begin{equation}
+  p=\frac Qt,\qquad
+  v_r=e^{2\ii b_r},\qquad r=1,\ldots,4.
+  \label{rains:dictionary}
+\end{equation}
+Then it is straightforward to show the following via the properties of the elliptic gamma functions,
+\begin{equation}
+  \mathcal T_n(v;p)
+  =\frac{C_0(Q,t)^n t^{-n^2}}{2^n n!}\,
+  \mathcal J_n(\mathbf{b}),
+  \label{rains:normalization}
+\end{equation}
+where
+\begin{align}
+  \mathcal J_n(\mathbf{b})
+  &=\int_{[0,\pi]^n}\prod_{i=1}^n
+  W_{\mathbf{b}}(a_i)\frac{\dd a_i}{\pi}\,
+  \prod_{i<j}R(a_i-a_j)R(a_i+a_j),
+  \label{rains:theta-integral}\\
+  W_{\mathbf{b}}(a)
+  &=\frac{t}{4q}\,
+  \frac{\vartheta_1'(0)^2\vartheta_1(2a)^2}
+  {\displaystyle\prod_{r=1}^4
+    \vartheta_4(a+b_r)\vartheta_4(a-b_r)}.
+  \label{rains:weight}
+\end{align}
+In this limit Theorem~\ref{thm:rains} becomes
+\begin{equation}
+  \mathcal J_n(\mathbf{b})=\mathcal J_n(H\mathbf{b}),
+  \qquad (H\mathbf{b})_r=b_r-\frac12\sum_{k=1}^4b_k.
+  \label{rains:theta-identity}
+\end{equation}
+
+This now looks remarkably similar to \eqref{eq:root-integrals}. The only distinction being the leading weight factor \eqref{rains:weight}. Now consider the boundary values\footnote{One must be careful in whether the limit is justified. This is discussed in appendix~\ref{app:rains-limit}.}
+\begin{equation}
+  \begin{aligned}
+    \mathbf{b}_B
+    &=\left(c-\frac{\pi\tau}{2},\
+    \frac{\pi}{2}-\frac{\pi\tau}{2},\ 0,\ -\frac{\pi}{2}\right).
+  \end{aligned}
+  \label{rains:additive-BC}
+\end{equation}
+For these values the weights reduce to $W_{\mathbf{b}_B}(a)=R(a)$. Finally, if we compute the limiting weight on the reflected side, we find $W_{H\mathbf{b}_B}(a)=R(2a)$.
+Thus, Theorem~\ref{thm:rains} reduces to our sought-after flavoured $S$-duality result.

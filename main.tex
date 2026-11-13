@@ -1,0 +1,63 @@
+\documentclass[11pt,letterpaper]{amsart}
+\RequirePackage{iftex}
+\ifPDFTeX
+  \pdfoutput=1
+  \pdfminorversion=4
+  \pdfobjcompresslevel=0
+\fi
+\RequirePackage{fix-cm}
+\usepackage[left=2.5cm,right=2.5cm,top=3.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,mathrsfs,booktabs,array}
+\usepackage{parskip}
+\setlength{\parskip}{0pt}
+\usepackage{xcolor}
+\definecolor{reference}{rgb}{.20,.60,.22}
+\definecolor{citation}{rgb}{0,.40,.80}
+\usepackage[colorlinks=true,linkcolor=reference,
+  citecolor=citation,urlcolor=citation]{hyperref}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\DeclareMathOperator{\sn}{sn}
+\DeclareMathOperator{\cn}{cn}
+\DeclareMathOperator{\dn}{dn}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\PE}{PE}
+\newcommand{\dd}{\mathrm d}
+\newcommand{\HH}{\mathscr H}
+\newcommand{\ii}{\mathrm i}
+\newcommand{\D}{\mathcal D}
+\newcommand{\Id}{\mathbf 1}
+\setlength{\emergencystretch}{1.5em}
+\allowdisplaybreaks[1]
+\setcounter{tocdepth}{1}
+\title[$B_n/C_n$ duality of the Schur index]{Exact $B_n/C_n$ duality of the
+Schur index of $\mathcal N=4$ SYM}
+\author{Aravinth Kulanthaivelu}
+\address{Independent Researcher}
+\email{aravinth.kulanthaivelu@outlook.com}
+\date{\today}
+\hypersetup{pdftitle={Exact Bn/Cn duality of the Schur index of N=4 SYM}}
+\begin{document}
+\begin{abstract}
+  \input{sections/00_abstract}
+\end{abstract}
+\maketitle
+\tableofcontents
+\setlength{\parskip}{10pt}
+\raggedbottom
+\input{sections/01_introduction}
+\input{sections/02_schur_index}
+\input{sections/03_unflavoured}
+\input{sections/04_flavoured}
+\input{sections/05_conclusion}
+\appendix
+\input{sections/06_appendix_elliptic}
+\input{sections/07_appendix_mode_motivation}
+\input{sections/08_appendix_darboux}
+\input{sections/09_appendix_rains_limit}
+\bibliographystyle{amsalpha}
+\bibliography{references}
+\end{document}
