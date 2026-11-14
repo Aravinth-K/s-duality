@@ -12,10 +12,9 @@ These integrals are taken with respect to the elliptic Selberg measure
     {2^n n!}
     \prod_{i<j}
     \frac{\Gamma_{p,Q}(t z_i^{\pm1}z_j^{\pm1})}
-    {\Gamma_{p,Q}(z_i^{\pm1}z_j^{\pm1})}\\
-    &\hspace{3em}\times\prod_{i=1}^n
+    {\Gamma_{p,Q}(z_i^{\pm1}z_j^{\pm1})}\prod_{i=1}^n
     \frac{1}{\Gamma_{p,Q}(z_i^{\pm2})}\,
-    \frac{\dd z_i}{2\pi\ii z_i}.
+    \frac{\dd z_i}{2\pi\ii z_i},
   \end{aligned}
   \label{rains:measure}
 \end{equation}
@@ -29,7 +28,7 @@ For our purposes the key result is the following.
   \label{thm:rains}
   For generic nonzero parameters, the integral
   \begin{equation}
-    \mathcal T_n(v;\kappa)=\int
+    \mathcal T_n(\mathbf{v};\kappa)=\int
     \mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{z};t;p,Q)
     \prod_{i=1}^n\prod_{r=1}^4
     \Gamma_{p,Q}\!\left(\sqrt{\frac{pQ}{\kappa}}\,
@@ -39,19 +38,19 @@ For our purposes the key result is the following.
   \end{equation}
   satisfies
   \begin{equation}
-    \mathcal T_n(v;\kappa)=\mathcal T_n(v';\kappa),\qquad
+    \mathcal T_n(\mathbf{v};\kappa)=\mathcal T_n(\mathbf{v}';\kappa),\qquad
     v'_r=\frac{v_r}{\sqrt{v_1v_2v_3v_4}}.
     \label{rains:general-reflection}
   \end{equation}
 \end{theorem}
 
 Here $\mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{x};t;p,Q)$ is an object called
-the analytic interpolation kernel, a meromorphic function of two $n$-tuples
+the analytic interpolation kernel, a meromorphic function of
 $\mathbf{z}$ and $\mathbf{x}$~\cite[Theorem~3.1]{Rains:2018kernel}.
 For a special value of $\kappa$ this kernel can be expressed in terms of
-elliptic gamma functions\footnote{This can be found by combining
+elliptic gamma functions\footnote{\label{rains:contour}This can be found by combining
   Proposition~2.10 of~\cite{Rains:2018kernel} with the corresponding analytic
-  continuation result in Theorem~3.1.},
+  continuation result in Theorem~3.1. Integration over $|z_i|=1$ requires $\left|\sqrt{pQ/\kappa}v_r^{\pm1}\right|<1$, separating poles tending zero and infinity.},
 \begin{equation}
   \mathcal K_\kappa^{(n)}(\mathbf{z};\mathbf{x};t;p,Q)
   =\prod_{i,j=1}^n\Gamma_{p,Q}(\kappa z_i^{\pm1}x_j^{\pm1}),
@@ -94,7 +93,7 @@ In this limit Theorem~\ref{thm:rains} becomes
 \end{equation}
 
 This now looks remarkably similar to \eqref{eq:root-integrals}. The only
-distinction being the leading weight factor \eqref{rains:weight}. Now consider
+distinction is the leading weight factor \eqref{rains:weight}. Now consider
 the boundary values\footnote{One must be careful in whether the limit is
 justified. This is discussed in appendix~\ref{app:rains-limit}.}
 \begin{equation}
